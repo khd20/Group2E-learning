@@ -20,7 +20,7 @@ related_name='courses')
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200,
 unique=True)
-    overview = models.TextField()
+    overview = models.TextField(default='')
     created = models.DateTimeField(auto_now_add=True)
 
 class Meta:
