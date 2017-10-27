@@ -1,4 +1,6 @@
 from django import forms
+from django.forms.models import inlineformset_factory
+from .models import Course, Module
 from django.contrib.auth.models import User
 
 class LoginForm(forms.Form):
@@ -20,3 +22,5 @@ def clean_password2(self):
     if cd['password'] != cd['password2']:
        raise forms.ValidationError('Passwords dont match.')
     return
+
+ModuleFormSet = inlineformset_factory(Course, Module, fields=['title','description'], extra=2, can_delete=True)
