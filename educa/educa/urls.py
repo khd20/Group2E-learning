@@ -4,6 +4,8 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls import url
 from courses.views import CourseListView
 #from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -17,10 +19,14 @@ urlpatterns = [
     #restore password urls
     url(r'^password-reset/$', auth_views.password_reset, name='password_reset'),
     url(r'^password-reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
-    url(r'^password-reset/confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$', auth_views.password_reset_confirm, name='password_reset_confirm'),
+    url(r'^password-reset/confirm/(?P<uidb64>[-\w]+)/(?P<token>[-\w]+)/$', auth_views.password_reset_confirm,
+        name='password_reset_confirm'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^course/', include('courses.urls')),
     url(r'^$', CourseListView.as_view(), name='course_list'),
     url(r'^students/', include('students.urls')),
     #url(r'accounts/', include('accounts.urls')),
+
 ]
+
+urlpatterns += static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

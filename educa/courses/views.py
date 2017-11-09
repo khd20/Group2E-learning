@@ -14,6 +14,7 @@ from .forms import LoginForm, UserRegistrationForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from .models import Subject
+from courses.models import Course
 from django.views.generic.detail import DetailView
 from students.forms import CourseEnrollForm
 
@@ -225,11 +226,8 @@ class CourseListView(TemplateResponseMixin, View):
     template_name = 'courses/course/list.html'
 
     def get(self, request, subject=None):
-        subjects = Subject.objects.annotate(
-            total_courses=Count('courses'))
-        courses = Course.objects.annotate(
-            total_modules=Count('modules')
-        )
+        subjects = Subject.objects.annotate(total_courses=Count('courses'))
+        courses = Course.objects.annotate(total_modules=Count('modules'))
         if subject:
             subject = get_object_or_404(Subject, slug=subject)
             courses = courses.filter(subject=subject)
@@ -238,17 +236,11 @@ class CourseListView(TemplateResponseMixin, View):
                                         'courses': courses})
 
 
+
 class CourseDetailView(DetailView):
     model = Course
     template_name = 'courses/course/detail.html'
 
-class StudentCourseDetailView(DetailView):
-    model = Course
-    template_name = 'students/course/detail.html'
-
-    def get_queryset(self):
-        qs = super(StudentCourseDetailView, self).get_queryset()
-        return qs.filter(students__in=[self.request.user])
 
 class CourseDetailView(DetailView):
     model = Course
