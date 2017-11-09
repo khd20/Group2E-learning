@@ -6,6 +6,7 @@
     <title>{% block title %}The Royalon Academy{% endblock %}</title>
     <link href="{% static "css\base.css" %}" rel="stylesheet">
 </head>
+
 <body>
     <div id="header">
         <a href="/" class="logo">The Royalon Academy</a>
@@ -27,12 +28,38 @@
                     <a href="{% url "login" %}">Log-in</a>
                 {% endif %}
             </span>
+    </div>
+</body>
 
     </div>
     <div id="content">
         {% block content %}
         {% endblock %}
     </div>
+
+    <div class="tab">
+	<button class="tablinks" onclick="openTab(event, 'About')">About</button>
+  	<button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+	<button class="tablinks" onclick="openTab(event, 'Help')">Help</button>
+
+    </div>
+
+<div id="About" class="tabcontent">
+
+	<p><b> Royalon Academy:</b><br /><hr />
+	<p><b><i>Knowledge is Power!</i></b></p>
+	<b>Vision:</b> Royalon Academy's Vision is to become an Internationally recognized Online E-Learning Website.<br /><hr />
+
+	<b>Mission:</b> Royalon Academy's Mission is to facilitate learning for students interested in different subjects by providing them challenging courses
+		and to meet the Subject Matter Experts</b><hr />
+
+  <p></p>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3></h3>
+  <p></p>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -42,7 +69,22 @@
             {% endblock %}
         });
     </script>
-</body>
+
+<script>
+function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
 </html>
 
-	   
