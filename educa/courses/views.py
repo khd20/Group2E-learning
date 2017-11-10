@@ -244,14 +244,6 @@ class CourseDetailView(DetailView):
     template_name = 'courses/course/detail.html'
 
 
-class CourseDetailView(DetailView):
-    model = Course
-    template_name = 'courses/course/detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(CourseDetailView, self).get_context_data(**kwargs)
-        context['enroll_form'] = CourseEnrollForm(initial={'course': self.object})
-        return context
 
 class ModuleOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
 
@@ -270,4 +262,11 @@ class ContentOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
                                    module__course__owner=request.user).update(order=order)
         return self.render_json_response({'saved': 'OK'})
 
+class CourseDetailView(DetailView):
+    model = Course
+    template_name = 'courses/course/detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(CourseDetailView, self).get_context_data(**kwargs)
+        context['enroll_form'] = CourseEnrollForm(initial={'course':self.object})
+        return context

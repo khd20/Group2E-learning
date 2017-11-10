@@ -6,6 +6,7 @@ from courses.views import CourseListView
 #from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from courses.views import CourseListView
 
 
 
@@ -23,8 +24,9 @@ urlpatterns = [
         name='password_reset_confirm'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^course/', include('courses.urls')),
+    url (r'^students/', include ('students.urls')),
     url(r'^$', CourseListView.as_view(), name='course_list'),
-    url(r'^students/', include('students.urls')),
+
     #url(r'accounts/', include('accounts.urls')),
 
 ]
