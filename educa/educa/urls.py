@@ -25,10 +25,13 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^course/', include('courses.urls')),
     url (r'^students/', include ('students.urls')),
+    url(r'^shop/', include('shop.urls', namespace='shop')),
+    url(r'^cart/', include('cart.urls', namespace='cart')),
+    url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^$', CourseListView.as_view(), name='course_list'),
 
     #url(r'accounts/', include('accounts.urls')),
 
 ]
-
-urlpatterns += static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

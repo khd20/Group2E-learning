@@ -6,6 +6,28 @@
     <title>{% block title %}The Royalon Academy{% endblock %}</title>
     <link href="{% static "css\base.css" %}" rel="stylesheet">
 </head>
+<style>
+			ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: 200px;
+                background-color: #00ff00;
+                }
+            li a {
+                 display: inline;
+                 text-align:center;
+                 float:left;
+                 color: black;
+                 padding: 8px 16px;
+                 text-decoration: none;
+                }
+            li a:hover {
+                background-color: #555;
+                color: white;
+                }
+				
+</style>
 
 <body>
     <div id="header">
@@ -14,7 +36,7 @@
             {% if request.user.is_authenticated %}
                 <li {% if section == "dashboard" %}class="selected"{% endif %}><a href="{% url "dashboard" %}">My dashboard</a></li>
                 <li {% if section == "My Courses" %}class="selected"{% endif %}><a href="{% url "manage_course_list" %}">Manage Courses</a></li>
-
+				
                 <li><a href="{% url "logout" %}">Sign out</a></li>
             {% else %}
                 <li><a href="{% url "login" %}">Sign in</a></li>
@@ -24,8 +46,7 @@
                 {% if request.user.is_authenticated %}
                     Hello {{ request.user.username }},
                     <a href="{% url "logout" %}">Logout</a>
-                {% else %}
-                    <a href="{% url "login" %}">Log-in</a>
+                
                 {% endif %}
             </span>
     </div>
