@@ -26,7 +26,7 @@
                 background-color: #555;
                 color: white;
                 }
-				
+
 </style>
 
 <body>
@@ -46,7 +46,7 @@
                 {% if request.user.is_authenticated %}
                     Hello {{ request.user.username }},
                     <a href="{% url "logout" %}">Logout</a>
-                
+
                 {% endif %}
             </span>
     </div>
@@ -55,6 +55,8 @@
     </div>
     <div id="content">
         {% block content %}
+
+        <p>Hello</p>
         {% endblock %}
     </div>
 
@@ -66,21 +68,33 @@
     </div>
 
 <div id="About" class="tabcontent">
+    <span onclick="this.parentElement.style.display='none'"
+          class="w3-button w3-display-topright">X</span>
 
-	<p><b> Royalon Academy:</b><br /><hr />
 	<p><b><i>Knowledge is Power!</i></b></p>
 	<b>Vision:</b> Royalon Academy's Vision is to become an Internationally recognized Online E-Learning Website.<br /><hr />
 
 	<b>Mission:</b> Royalon Academy's Mission is to facilitate learning for students interested in different subjects by providing them challenging courses
-		and to meet the Subject Matter Experts</b><hr />
+		and to meet the Subject Matter Experts</b>
 
-  <p></p>
 </div>
 
 <div id="Contact" class="tabcontent">
-  <h3></h3>
-  <p></p>
+  <span onclick="this.parentElement.style.display='none'"
+          class="w3-button w3-display-topright">X</span>
+
+    <p> Page under Construction </p>
 </div>
+
+<div id="Help" class="tabcontent">
+  <span onclick="this.parentElement.style.display='none'"
+          class="w3-button w3-display-topright">X</span>
+
+    <p> Page under Construction </p>
+
+</div>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>

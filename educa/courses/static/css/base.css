@@ -266,7 +266,7 @@ div.tab {
 /* Style the buttons inside the tab */
 div.tab button {
     background-color: inherit;
-    float: right;
+    float: left;
     border: none;
     outline: none;
     cursor: pointer;
@@ -276,7 +276,7 @@ div.tab button {
 
 
 div.tab button:hover {
-    background-color: #23dddd;
+    background-color: #41dd2c;
 }
 
 
@@ -288,7 +288,7 @@ div.tab button.active {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc0cb;
+    border: 1px solid #3776cc;
     border-top: none;
 
 .tabcontent {
