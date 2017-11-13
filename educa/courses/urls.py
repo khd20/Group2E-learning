@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/(?P<id>\d+)/$',
             views.ContentCreateUpdateView.as_view(), name='module_content_update'),
 
+
 ]
 
 

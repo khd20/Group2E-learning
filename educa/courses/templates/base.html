@@ -36,7 +36,7 @@
             {% if request.user.is_authenticated %}
                 <li {% if section == "dashboard" %}class="selected"{% endif %}><a href="{% url "dashboard" %}">My dashboard</a></li>
                 <li {% if section == "My Courses" %}class="selected"{% endif %}><a href="{% url "manage_course_list" %}">Manage Courses</a></li>
-				
+				<li {% if section == "My Shopping Cart" %}class="selected"{% endif %}><a href="{% url "product_list" %}">My shopping cart</a></li>
                 <li><a href="{% url "logout" %}">Sign out</a></li>
             {% else %}
                 <li><a href="{% url "login" %}">Sign in</a></li>

@@ -7,7 +7,7 @@ from courses.views import CourseListView
 from django.conf import settings
 from django.conf.urls.static import static
 from courses.views import CourseListView
-
+from shop.views import product_list
 
 
 urlpatterns = [
@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^$', CourseListView.as_view(), name='course_list'),
+    url(r'^shop/$', product_list, name='product_list'),
 
     #url(r'accounts/', include('accounts.urls')),
 
