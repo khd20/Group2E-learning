@@ -12,13 +12,13 @@
                 margin: 0;
                 padding: 0;
                 width: 200px;
-                background-color: #00ff00;
+                background-color: #66a5ad;
                 }
             li a {
                  display: inline;
                  text-align:center;
                  float:left;
-                 color: black;
+                 color: #66a5ad;
                  padding: 8px 16px;
                  text-decoration: none;
                 }
@@ -37,6 +37,7 @@
                 <li {% if section == "dashboard" %}class="selected"{% endif %}><a href="{% url "dashboard" %}">My dashboard</a></li>
                 <li {% if section == "My Courses" %}class="selected"{% endif %}><a href="{% url "manage_course_list" %}">Manage Courses</a></li>
 				<li {% if section == "My Shopping Cart" %}class="selected"{% endif %}><a href="{% url "product_list" %}">My shopping cart</a></li>
+
                 <li><a href="{% url "logout" %}">Sign out</a></li>
             {% else %}
                 <li><a href="{% url "login" %}">Sign in</a></li>
