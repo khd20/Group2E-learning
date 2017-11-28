@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^course/', include('courses.urls')),
     url (r'^students/', include ('students.urls')),
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+    url(r'^payment/', include('payment.urls', namespace='payment')),
     url(r'^shop/', include('shop.urls', namespace='shop')),
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),

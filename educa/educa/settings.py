@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'shop',
     'cart',
     'orders',
+    'paypal.standard.ipn',
+    'payment',
     'courses',
     'students',
     'embed_video',
@@ -152,6 +154,15 @@ LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'elearningsteam2@gmail.com'
+EMAIL_HOST_PASSWORD = 'elearning@2017'
+EMAIL_PORT = 587
+
 CART_SESSION_ID = 'cart'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+PAYPAL_RECEIVER_EMAIL = 'elearningsteam2@gmail.com'
+PAYPAL_TEST = True
+
