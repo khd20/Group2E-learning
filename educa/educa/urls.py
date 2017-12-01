@@ -31,7 +31,9 @@ urlpatterns = [
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^$', CourseListView.as_view(), name='course_list'),
+    url(r'^coupons/', include ('coupons.urls', namespace='coupons')),
     url(r'^shop/$', product_list, name='product_list'),
+
 
     #url(r'accounts/', include('accounts.urls')),
 
