@@ -95,3 +95,5 @@ class Video(ItemBase):
 
 students = models.ManyToManyField(User, related_name='courses_joined', blank=True)
 
+
+
