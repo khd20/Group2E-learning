@@ -73,7 +73,7 @@
 
 <div id="About" class="tabcontent">
     <span onclick="this.parentElement.style.display='none'"
-          class="w3-button w3-display-topright">X</span>
+          class="w3-button w3-display-topright"></span>
 
 	<p><b><i>Knowledge is Power!</i></b></p>
 	<b>Vision:</b> Royalon Academy's Vision is to become an Internationally recognized Online E-Learning Website.<br /><hr />
@@ -85,14 +85,21 @@
 
 <div id="Contact" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'"
-          class="w3-button w3-display-topright">X</span>
+          class="w3-button w3-display-topright"></span>
 
-    <p> Page under Construction </p>
+    <p> Hello <b>{{ request.user.username}}!</b><br>
+        <br>
+        Welcome to the Contact Page <br>
+        <br>
+        If you have any queries or concerns please email us at <b>elearningsteam2@gmail.com</b><br>
+        <br>
+        Our office location is at: Royalon Academy, Omaha, Nebraska
+    </p>
 </div>
 
 <div id="Help" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'"
-          class="w3-button w3-display-topright">X</span>
+          class="w3-button w3-display-topright"></span>
 
     <p><b><i>Welcome to the Help Page!</i></b></p>
     <p><b>Ask an Instructor a Question</b></p>
@@ -107,7 +114,7 @@
 
 <div id="Scholarships" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'"
-          class="w3-button w3-display-topright">X</span>
+          class="w3-button w3-display-topright"></span>
     <h4><b>There are several scholarships that are awarded by our E-learing website for colledge students
         who are interested in studying Python and Django.</b></h4>
     <p>Our website offers at least eight merit-based, partial scholarships for full-time and part-time, undergraduate
@@ -123,7 +130,7 @@ For more details and to submit an application, please send email to us:<br>
 
 <div id="Donations" class="tabcontent">
   <span onclick="this.parentElement.style.display='none'"
-          class="w3-button w3-display-topright">X</span>
+          class="w3-button w3-display-topright"></span>
     <p><b>Why We Need Donations?</b><br>
 The Royalon Academy is a student team,
         and we are working on helping those students coming from different areas,
