@@ -22,7 +22,7 @@ gunicorn==19.7.1
 idna==2.6
 kombu==3.0.37
 movie-list==1.0
-Pillow==2.9.0
+Pillow==8.3.2
 psycopg2==2.7.1
 python-dotenv==0.7.1
 pytz==2017.2
